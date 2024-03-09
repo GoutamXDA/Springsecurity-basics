@@ -6,10 +6,10 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan("com.springsecurity.controller")
-public class SpringsecurityApplication {
+public class BackendBankApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringsecurityApplication.class, args);
+		SpringApplication.run(BackendBankApplication.class, args);
 	}
 
 }
