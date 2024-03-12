@@ -9,11 +9,9 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 	@Bean
 	SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-		http.authorizeHttpRequests()
-		.requestMatchers("/myAccount","/myBlance","/myLoans","/myCards").authenticated().
-		requestMatchers("/notices","/contact").permitAll()
-		.and().formLogin()
-		.and().httpBasic();
+		http.authorizeHttpRequests((requests) -> requests.anyRequest().authenticated());
+		http.formLogin();
+		http.httpBasic();
 		return http.build();
 	}
 }
